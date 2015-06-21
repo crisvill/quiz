@@ -9,8 +9,8 @@
     "node": "0.12.x",
     "npm": "2.10.x"
   },
-{
-  "sqlite3": "^3.0.8"
+  "devDependencies": {
+    "sqlite3": "^3.0.8"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
