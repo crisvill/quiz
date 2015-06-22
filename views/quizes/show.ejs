@@ -1,5 +1,5 @@
 <form method="GET" action="/quizes/<%= quiz.id %>/answer" >
   Pregunta: <%= quiz.pregunta %> <p>
-    <input type="text" name="respuesta" placeholder="responda aquí" required>
+    <input type="text" name="respuesta" placeholder="responda aquí" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{2,256}" required>
     <input type="submit" value="Enviar">
 </form>
