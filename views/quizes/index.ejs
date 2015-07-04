@@ -6,9 +6,10 @@
   <% } %>
 </table>
 <br>
-<hr>
+<a href="/quizes/new"><button type="button">Crear Pregunta</button></a>
+
 <form method="GET" action="/quizes">
     <p>Buscador de Preguntas </p>
-    <input type="text" name="search" placeholder="introduzca pregunta a buscar " pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{2,256}">
+    <input type="text" name="search" placeholder="introduzca pregunta a buscar " pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}">
     <input type="submit" value="Buscar">
 </form>
