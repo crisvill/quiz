@@ -1,7 +1,10 @@
 <div>
 <table>
   <% var i; if(quizes.length > 0) {for (i=0; i < quizes.length; i++) { %>
-    <tr><td><a href="quizes/<%= quizes[i].id%>"><%= quizes[i].pregunta %></a></td></tr>
+    <tr>
+      <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+      <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
+    </tr>
   <% }} else { %>
     <h3>No se encontró ningún dato!...</h3>
   <% } %>

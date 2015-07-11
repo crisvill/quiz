@@ -1,10 +1,10 @@
 <div id="fPreg">
   <label for="preg" class="rem">Pregunta:</label>
-  <input type="text" id="preg" name="quiz[pregunta]" placeholder="Pregunta" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}" required>
+  <input type="text" id="preg" name="quiz[pregunta]"  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}" value="<%= quiz.pregunta %>"  required>
 </div>
 <div id="fResp">
   <label for="resp" class="rem">Respuesta:</label>
-  <input type="text" id="resp" name="quiz[respuesta]" placeholder="Respuesta" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}" required><br><br><br>
+  <input type="text" id="resp" name="quiz[respuesta]" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}" value="<%= quiz.respuesta %>" required><br><br><br>
 </div>
 <div id="fButt">
   <a href="/quizes"><button type="button">Cancelar</button></a>
