@@ -1,17 +1,22 @@
 *                    { margin: 0; padding: 0; }
-body, a { font: 1em Georgia, serif; color: white;}
+body, a { font: 1em Georgia, serif; color: white; }
+body { background: #1f253d;}
 
-#page-wrap           { margin: 2% auto; color: white; }
-#page-wrap > .main   { border: 5px solid #1f253d;
+#page-wrap           { margin: 2% auto; color: white;}
+#page-wrap > .main   { border: 0px solid #1f253d;
 											 border-radius: 10px;
 											 box-shadow: inset 0 0 0 1px #393f61;
-										   padding: 5px;
+											 padding: 0px;
 	                     margin-bottom: 1px;}
 
 header h2, span { background-color: #cc324c; padding: 10px;}
 section > div        { padding: 20px; }
-header, nav, section { background: #394263; text-align: center;}
+header, nav { background: #394263; text-align: center;}
+section, nav { margin-top: 10px; margin-bottom: 10px;}
+section { background: #394263; padding-top: 20px; text-align: left;}
 footer               { background: #394263; text-align: center;}
+
+
 
 a { text-decoration: none;
 	text-align: left;
@@ -19,17 +24,21 @@ a { text-decoration: none;
 	margin: 10px;
 	color: #9aa3c1;}
 a:hover { color: white;}
-#ErrorMsgs           { color: #f61; font-size: smaler}
+#ErrorMsgs { color: #fbd950; font-size: smaler; background: none; padding-top: 10px; padding-bottom: 10pz;}
+#ErrorMsgs > span { background: none;}
 .right 				 {float: right;}
 
 .quiz_img 			 { height: 150px; float: left;}
 
-
+/*****************************/
+/*menu de navegacion */
 #menu {
 	list-style:none;
 	margin:0;
 	padding:0;
 	color: white;
+	overflow: hidden;
+	height: 100%;
 }
 ul {
     list-style-type: none;
@@ -37,12 +46,12 @@ ul {
     padding: 0;
 }
 #menu li {
-	margin: 2px;
+	margin: 0;
 	padding:0;
 }
 #menu li a {
 	display:inline-block;
-	width:100px;
+	width: 33%;
 	padding: 0;
 	text-decoration:none;
 	text-align:center;
@@ -54,7 +63,41 @@ ul {
 	background-color:#50597a;
 	border-left-color: #10a8ab;
 }
-form {padding: 5px;}
+/*fin de estilos de menu de navegacion */
+/**************************************/
+/* formularios */
+
+label{
+    display: inline-block;
+		float: left;
+		text-align: right;
+	  clear: left;
+		width: 43%;
+		padding-bottom: 10px;
+}
+input {
+  display:  inline-block;
+}
+
+input[type="text"] {
+	border-radius: 15px;
+	border: none;
+	height: 25px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 10px;
+  background-color: lightgrey;
+	float: left;
+
+}
+input[type="text"]:focus {
+  background   : white;
+  border-radius: 15px;
+  outline      : none;
+	box-shadow: 0 0 15px #4fc5f7;
+}
+
+#fButt {	padding-top: 10px;}
 
 button, input[type="submit"] { /* clase general */
 	border: none;
@@ -66,6 +109,14 @@ button, input[type="submit"] { /* clase general */
   padding: 8px 11px;
   text-decoration: none;
 }
+
+
 input[type="submit"] { background-color: #3767b1;}
 
-button:hover, input[type="submit"]:hover {  opacity: .35; }
+
+button:hover, input[type="submit"]:hover {
+	opacity: .75;
+	box-shadow: 0 0 3px #00e831;
+}
+
+#pr1 { padding-top: 10px; padding-bottom: 10px;}

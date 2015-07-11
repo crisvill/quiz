@@ -19,13 +19,21 @@
       <h2>Quiz<span>: el Juego de las preguntas</span></h2>
     </header>
     <nav class="main" id="n1" role="navigation">
-      <ul id="menu">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/quizes">Preguntas</a></li>
-        <li><a href="/author">Créditos</a></li>
-      </ul>
+        <ul id="menu">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/quizes">Preguntas</a></li>
+          <li><a href="/author">Créditos</a></li>
+        </ul>
     </nav>
     <section class="main" id="s1">
+      <% if(errors.length){ %>
+        <span id="ErrorMsgs">
+          Corregir errores: <br>
+          <% for(var i in errors){ %>
+            <span><%= errors[i].message %></span><br>
+          <% } %>
+        </span>
+      <% } %>
       <%- body %>
     </section>
     <footer class="main" id="f1">

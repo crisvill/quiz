@@ -1,3 +1,4 @@
+<div>
 <table>
   <% var i; if(quizes.length > 0) {for (i=0; i < quizes.length; i++) { %>
     <tr><td><a href="quizes/<%= quizes[i].id%>"><%= quizes[i].pregunta %></a></td></tr>
@@ -6,10 +7,12 @@
   <% } %>
 </table>
 <br>
-<a href="/quizes/new"><button type="button">Crear Pregunta</button></a>
 
-<form method="GET" action="/quizes">
-    <p>Buscador de Preguntas </p>
-    <input type="text" name="search" placeholder="introduzca pregunta a buscar " pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}">
+<a href="/quizes/new"><button type="button">Crear Pregunta</button></a>
+<br><br>
+<form method="GET" action="/quizes" id="buscon">
+    <label>Buscador de Preguntas: </label>
+    <input id="i-search" type="text" name="search" placeholder="introduzca pregunta a buscar " pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}">
     <input type="submit" value="Buscar">
 </form>
+</div>

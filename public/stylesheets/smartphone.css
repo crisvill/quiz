@@ -4,6 +4,8 @@ body             { background: #1f253d; }
 
 h2 span, section h3, label.rem
                  { display: none; }
-body             { font-size: xx-large; }
-input, button    { font-size: x-large; }
+body             { font-size: xx-large; align: center;}
+input { font-size: x-large; }
+input[type="submit"] button    { font-size: x-large;}
 footer           { font-size: large; }
+input[type="text"] { width: 250px; display: inline-block;}

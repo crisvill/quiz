@@ -1,9 +1,13 @@
-body { background: #1f253d; }
+body { background: #1f253d;}
 
 #page-wrap:after { content: "Wide Layout" center;}
 
 nav       { float: left; width: 15%;}
-#menu li  { margin: 0px 0px 0px 0px; padding-bottom: 5px; width: 100%;}
-section   { float: right; width: 80%;}
-footer    { clear: both;  display: block; }
+#menu li  { margin: 0px 0px 0px 0px; padding-bottom: 2px;}
+#menu li a { margin: 0; padding: 0; width: 97%}
+#menu li a:hover { border-radius: 4px;}
+section   { float: right; width: 84%;}
+section, nav { margin-top: 10px; margin-bottom: 10px;}
+
+footer    { clear: both;  display: block;}
 img {display: block center; height: 350px;}
