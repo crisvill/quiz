@@ -8,4 +8,4 @@ body             { font-size: xx-large; align: center;}
 input { font-size: x-large; }
 input[type="submit"] button    { font-size: x-large;}
 footer           { font-size: large; }
-input[type="text"] { width: 250px; display: inline-block;}
+input[type="text"] { width: 250px; display: inline-block; margin-top: 10px;}

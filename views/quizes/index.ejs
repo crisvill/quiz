@@ -1,8 +1,15 @@
 <div>
 <table>
+    <th>
+      <tr>
+        <th><a href="/quizes"><strong>Pregunta</strong></a></th>
+        <th><a href="/quizes"><strong>Categoría</strong></a></th>
+      </tr>
+    </th>
   <% var i; if(quizes.length > 0) {for (i=0; i < quizes.length; i++) { %>
     <tr>
       <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+      <td><a href="<%= quizes[i].categoria %>"><span id="cat">[<%= quizes[i].categoria %>]</span></a></td>
       <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
       <td>
         <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
@@ -20,6 +27,7 @@
 
 <a href="/quizes/new"><button type="button">Crear Pregunta</button></a>
 <br><br>
+<!--Buscador de Preguntas-->
 <form method="GET" action="/quizes" id="buscon">
     <label>Buscador de Preguntas: </label>
     <input id="i-search" type="text" name="search" placeholder="introduzca pregunta a buscar " pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}">

@@ -20,10 +20,12 @@ exports.index = function(req, res) {
   if (req.query.search) {
     search = req.query.search;
   }
+
   //agrega simbolo % al inicio y al final, y remplaza los espcios en blanco
   search = '%' + search.replace(/[\s]/g,"%") + '%';
 
  // Busca en la colección los datos que concuerde con search
+
   models.Quiz.findAll({where: ["pregunta like ?", search]}).then(
     function(quizes) {
         res.render('quizes/index.ejs', { quizes: quizes, errors: []});
@@ -35,6 +37,18 @@ exports.index = function(req, res) {
 exports.show = function(req, res) {
     res.render('quizes/show', { quiz: req.quiz, errors: []});
 };
+
+// GET /quizes/:categoria
+exports.indexCat = function(req, res) {
+ // Busca en la colección los datos que concuerde con la categoria
+  models.Quiz.findAll({where: ["categoria like ?", req.params.categoria]}).then(
+    function(quizes) {
+        res.render('quizes/index.ejs', { quizes: quizes, errors: []});
+    }
+  ).catch(function(error) { next(error);});
+};
+
+
 
 // GET /quizes/:id/answer
 exports.answer = function(req, res) {
@@ -53,7 +67,7 @@ exports.author = function(req, res) {
 /* GET /new */
 exports.new = function(req, res) {
   var quiz = models.Quiz.build(
-    {pregunta: "Pregunta", respuesta: "Respuesta"}
+    {pregunta: "Pregunta", respuesta: "Respuesta", categoria: "Categoria"}
   );
 
   res.render('quizes/new', {quiz: quiz, errors: []});
@@ -61,7 +75,7 @@ exports.new = function(req, res) {
 
 // POST /quizes/create
 exports.create = function(req, res) {
-  var quiz = models.Quiz.build( req.body.quiz );
+  var quiz = models.Quiz.build( req.body.quiz);
 
   quiz
   .validate()
@@ -71,7 +85,7 @@ exports.create = function(req, res) {
         res.render("quizes/new", {quiz: quiz , errors: err.errors});
       } else {
         quiz
-        .save({fields: ["pregunta", "respuesta"]})
+        .save({fields: ["pregunta", "respuesta", "categoria"]})
         .then(function(){
           res.redirect('/quizes');
         });   // res.redirect: Redirección HTTP a lista de preguntas
@@ -91,6 +105,7 @@ exports.edit = function(req, res) {
 exports.update = function (req, res) {
   req.quiz.pregunta = req.body.quiz.pregunta;
   req.quiz.respuesta = req.body.quiz.respuesta;
+  req.quiz.categoria = req.body.categoria;
 
   req.quiz
   .validate()
@@ -100,7 +115,7 @@ exports.update = function (req, res) {
         res.render('quizes/edit', {quiz: req.quiz, errors: err.errors});
       } else {
         req.quiz
-        .save({fields: ["pregunta","respuesta"]})
+        .save({fields: ["pregunta","respuesta","categoria"]})
         .then( function() { res.redirect('/quizes');});
       }
     }

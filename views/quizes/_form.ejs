@@ -1,10 +1,23 @@
 <div id="fPreg">
   <label for="preg" class="rem">Pregunta:</label>
-  <input type="text" id="preg" name="quiz[pregunta]"  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}" value="<%= quiz.pregunta %>"  required>
+  <input type="text" id="preg" name="quiz[pregunta]"  pattern="[a-z0-9A-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-()]{1,256}" value="<%= quiz.pregunta %>"  required>
 </div>
 <div id="fResp">
   <label for="resp" class="rem">Respuesta:</label>
-  <input type="text" id="resp" name="quiz[respuesta]" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{1,256}" value="<%= quiz.respuesta %>" required><br><br><br>
+  <input type="text" id="resp" name="quiz[respuesta]" pattern="[a-zA-Z0-9àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-()]{1,256}" value="<%= quiz.respuesta %>" required>
+</div>
+<div id="catego">
+  <label for="tema" class="rem">Categoría:</label>
+  <select name="quiz[categoria]">
+    <option selected disabled>---Categoría---</option>
+    <option value="otro">Otro</option>
+    <option value="humanidades">Humanidades</option>
+    <option value="ocio">Ocio</option>
+    <option value="ciencia">Ciencia</option>
+    <option value="tecnologia">Tecnología</option>
+  </select>
+<br><br><br><br><br><br>
+
 </div>
 <div id="fButt">
   <a href="/quizes"><button type="button">Cancelar</button></a>

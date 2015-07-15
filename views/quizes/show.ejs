@@ -1,5 +1,9 @@
-<form method="GET" action="/quizes/<%= quiz.id %>/answer" >
-  Pregunta: <%= quiz.pregunta %> <p>
-    <input type="text" name="respuesta" placeholder="responda aquí" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{2,256}" required>
-    <input type="submit" value="Enviar">
-</form>
+<div align="center">
+  <form method="GET" action="/quizes/<%= quiz.id %>/answer" >
+      <label for=""><%= quiz.pregunta %> :</label>
+      <input type="text" name="respuesta" placeholder="responda aquí" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]{2,256}" required>
+      <br><br>
+      <a href="/quizes"><button type="button">Volver</button></a>
+      <input type="submit" value="Enviar">
+  </form>
+</div>
