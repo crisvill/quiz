@@ -20,16 +20,30 @@ exports.index = function(req, res) {
   if (req.query.search) {
     search = req.query.search;
   }
-
   //agrega simbolo % al inicio y al final, y remplaza los espcios en blanco
   search = '%' + search.replace(/[\s]/g,"%") + '%';
-
- // Busca en la colección los datos que concuerde con search
-
-  models.Quiz.findAll({where: ["pregunta like ?", search]}).then(
+  // Busca en la colección los datos que concuerde con search
+  models.Quiz.findAll({
+      order: 'pregunta',
+      where: ["pregunta like ?", search]
+    })
+    .then(
     function(quizes) {
         res.render('quizes/index.ejs', { quizes: quizes, errors: []});
     }
+  ).catch(function(error) { next(error);});
+};
+
+// GET /quizes/:categoria
+exports.indexCat = function(req, res) {
+ // Busca en la colección los datos que concuerde con la categoria
+  models.Quiz.findAll({
+      order: 'pregunta',
+      where: ["categoria like ?", req.params.categoria]
+      })
+      .then( function(quizes) {
+          res.render('quizes/index.ejs', { quizes: quizes, errors: []});
+      }
   ).catch(function(error) { next(error);});
 };
 
@@ -37,18 +51,6 @@ exports.index = function(req, res) {
 exports.show = function(req, res) {
     res.render('quizes/show', { quiz: req.quiz, errors: []});
 };
-
-// GET /quizes/:categoria
-exports.indexCat = function(req, res) {
- // Busca en la colección los datos que concuerde con la categoria
-  models.Quiz.findAll({where: ["categoria like ?", req.params.categoria]}).then(
-    function(quizes) {
-        res.render('quizes/index.ejs', { quizes: quizes, errors: []});
-    }
-  ).catch(function(error) { next(error);});
-};
-
-
 
 // GET /quizes/:id/answer
 exports.answer = function(req, res) {
