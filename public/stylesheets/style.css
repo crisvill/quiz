@@ -77,7 +77,7 @@ input, select {
   display:  inline-block;
 }
 
-input[type="text"], select {
+input[type="text"], input[type="password"], select {
 	border-radius: 15px;
 	border: none;
 	height: 25px;
