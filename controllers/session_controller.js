@@ -1,3 +1,13 @@
+//MiddleWare para control de acceso a recursos HTTP restringidos
+exports.loginRequired = function (req, res, next) {
+  if(req.session.user){
+    next();
+  } else {
+    res.redirect('/login');
+  }
+};
+
+
 //GET carga formulario de login
 exports.new = function (req, res) {
   var errors = req.session.errors || {} ;
